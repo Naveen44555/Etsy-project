@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etsy Navbar</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> <!---->
+
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- =====================
+     DESKTOP NAVBAR
+     ===================== -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm desktop-nav">
+  <div class="container-fluid nav-container">
+
+    <a class="navbar-brand fs-1 fw-bold text-danger">𝐄𝐭𝐬𝐲</a>
+
+    <!-- DESKTOP CATEGORIES -->
+    <div class="desktop-categories d-flex align-items-center ms-4">
+        <i class="bi bi-list fs-4 me-2"></i>
+        <span class="fw-semibold">Categories</span>
+    </div>
+
+    <!-- Desktop Search -->
+    <div class="position-relative mx-auto desktop-search">
+      <input type="text" class="search-box" placeholder="Search for anything">
+      <button class="search-btn"><i class="bi bi-search"></i></button>
+    </div>
+
+    <!-- Right Icons -->
+    <div class="d-flex align-items-center icon-group">
+      <i class="bi bi-heart icon-btn"></i>
+      <i class="bi bi-gift icon-btn"></i>
+
+      <span class="icon-btn d-flex align-items-center">
+        <i class="bi bi-bell"></i>
+        <i class="bi bi-caret-down dropdown-arrow"></i>
+      </span>
+
+      <i class="bi bi-question-circle icon-btn"></i>
+
+      <span class="icon-btn d-flex align-items-center">
+        <i class="bi bi-person-circle"></i>
+        <i class="bi bi-caret-down dropdown-arrow"></i>
+      </span>
+
+      <i class="bi bi-cart3 icon-btn"></i>
+    </div>
+
+  </div>
+</nav>
+
+<!-- =====================
+     SECOND ROW NAV (DESKTOP ONLY)
+     ===================== -->
+<div class="second-row-nav d-flex justify-content-center align-items-center">
+
+    <div class="second-item d-flex align-items-center px-3">
+        <i class="bi bi-gift me-1"></i> Gifts
+    </div>
+
+    <div class="second-item px-3">Our Top 100 Gifts</div>
+    <div class="second-item px-3">Home Favourites</div>
+    <div class="second-item px-3">Fashion Finds</div>
+    <div class="second-item px-3">Registry</div>
+
+</div>
+
+
+<!-- =====================
+     MOBILE NAVBAR
+     ===================== -->
+<div class="mobile-nav">
+
+    <!-- Row 1: Logo + Icons -->
+    <div class="top-row">
+        <a class="navbar-brand fs-2 fw-bold text-danger">Etsy</a>
+
+        <div class="d-flex align-items-center">
+            <i class="bi bi-heart icon-btn"></i>
+            <i class="bi bi-gift icon-btn"></i>
+
+            <span class="icon-btn d-flex align-items-center">
+                <i class="bi bi-bell"></i>
+                <i class="bi bi-caret-down dropdown-arrow"></i>
+            </span>
+
+            <i class="bi bi-question-circle icon-btn"></i>
+
+            <span class="icon-btn d-flex align-items-center">
+                <i class="bi bi-person-circle"></i>
+                <i class="bi bi-caret-down dropdown-arrow"></i>
+            </span>
+
+            <i class="bi bi-cart3 icon-btn"></i>
+        </div>
+    </div>
+
+    <!-- Row 2: Hamburger + Search Bar -->
+    <div class="search-row d-flex align-items-center gap-3">
+        <i class="bi bi-list fs-3"></i>
+
+        <div class="position-relative w-100">
+            <input type="text" class="search-box" placeholder="Search for anything">
+            <button class="search-btn"><i class="bi bi-search"></i></button>
+        </div>
+    </div>
+
+</div>
+
+  <div class="top-banner">
+    <h1>Etsy's Best Gift Guides</h1>
+    <p>Discover curated picks for every person and moment, straight from extraordinary small shops.</p>
+  </div>
+
+  <div class="circle-section">
+    <!-- ONE CIRCLE EXAMPLE -->
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp2.webp" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp2.webp" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp6.webp" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp2.webp" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp3.avif" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+    
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp4.avif" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp5.avif" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <a href="page2.html" class="circle-link"></a>
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp4.avif" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp2.webp" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp5.avif" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp5.avif" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp2.webp" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp5.avif" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp4.avif" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+    <div class="circle-item">
+      <div class="image-wrapper">
+        <img class="slider-img img1" src="./images/wp1.avif" alt="">
+        <img class="slider-img img2" src="./images/wp3.avif" alt="">
+      </div>
+      <div class="circle-item-text">Top 100 Gifts <span>→</span></div>
+    </div>
+
+  </div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/...bootstrap.min.js"></script>
+
+ <script>
+    // After 1 second, slide once from image 1 to image 2 and stop
+    document.addEventListener('DOMContentLoaded', () => {
+      const wrappers = document.querySelectorAll('.image-wrapper');
+
+      wrappers.forEach(wrapper => {
+        setTimeout(() => {
+          wrapper.classList.add('slide-once');
+        }, 2000); // 1 second delay
+      });
+    });
+
+    document.getElementsByClassName("bi bi-gift me-1")
+    
+
+    // ---
+
+
+  </script>
+
+
+
+</body>
+</html>

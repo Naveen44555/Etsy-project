@@ -1,0 +1,178 @@
+/* Desktop spacing */
+.nav-container {
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+    height: 45px;
+}
+
+/* Search bar */
+.search-box {
+    width: 100%;
+    height: 47px;
+    border-radius: 25px;
+    border: 2px solid #333;
+    padding-left: 15px;
+}
+
+.search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 36px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #f16521;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Desktop search width */
+.desktop-search {
+    width: 600px;
+}
+
+/* Icons spacing */
+.icon-btn {
+    font-size: 22px;
+    margin-left: 23px;
+}
+
+.dropdown-arrow {
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+/* ==========================
+   SECOND ROW NAVIGATION
+   ========================== */
+.second-row-nav {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    font-weight: 500;
+    gap: 20px;
+}
+
+.second-item {
+    cursor: pointer;
+    /* padding: 5px 10px; */
+}
+
+.second-item:hover {
+    width: auto;
+    height: auto;
+    /* text-decoration: underline; */
+    border: 2px red solid;
+    color: rgb(3, 78, 254);
+    background-color: rgba(128, 128, 128, 0.458);
+    border-radius: 40px 2px 40px 2px;
+}
+
+/* ==========================
+   MOBILE VIEW
+   ========================== */
+.mobile-nav {
+    display: none;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+  /* ===== Top Banner ===== */
+    .top-banner {
+        background:#0920ecb8;
+        color:#fff;
+        text-align:center;
+        padding:30px 10px 80px; /* bottom padding for overlap */
+        font-family: 'Inter', sans-serif;
+    }
+    .top-banner h1 { font-size:48px; margin-bottom:10px; }
+    .top-banner p { font-size:20px; opacity:.9; }
+
+    /* ===== Circle Section ===== */
+    .circle-section {
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:50px;
+        margin-top:-60px; /* pull circles into banner */
+    }
+    .circle-item { text-align:center; }
+
+ .image-wrapper {
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    overflow:hidden;
+    position:relative;
+}
+
+.slider-img {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    transition: transform .6s ease;
+}
+
+/* Start positions */
+.img1 { transform: translateX(0); }
+.img2 { transform: translateX(100%); }
+
+/* After slide-once is added */
+.slide-once .img1 { transform: translateX(-100%); }
+.slide-once .img2 { transform: translateX(0); }
+
+
+    /* Text below image */
+    .circle-item-text {
+        margin-top:12px;
+        font-size:15px;
+        font-weight:600;
+        display:flex;
+        justify-content:center;
+        gap:5px;
+        color:#2d2d2d;
+        font-family: 'Inter', sans-serif;
+    }
+    .circle-item-text span { transition:.2s; }
+    .circle-item-text:hover span { transform:translateX(4px); }
+
+
+
+
+/* Hide second row & desktop navbar on mobile */
+@media (max-width: 768px) {
+
+    .desktop-nav,
+    .second-row-nav,
+    .desktop-categories {
+        display: none !important;
+    }
+
+    .mobile-nav {
+        display: block;
+        padding: 10px 15px;
+        background: white;
+    }
+
+    .top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .search-row {
+        margin-top: 10px;
+        display: flex;
+    }
+}
+
+
