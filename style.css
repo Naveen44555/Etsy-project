@@ -61,16 +61,17 @@
 .second-item {
     cursor: pointer;
     /* padding: 5px 10px; */
+    height: auto;
 }
 
 .second-item:hover {
     width: auto;
     height: auto;
     /* text-decoration: underline; */
-    border: 2px red solid;
     color: rgb(3, 78, 254);
-    background-color: rgba(128, 128, 128, 0.458);
+    background-color: rgba(253, 253, 253, 0.458);
     border-radius: 40px 2px 40px 2px;
+    border: 2px rgba(255, 95, 2, 0.834) solid;
 }
 
 /* ==========================
@@ -146,6 +147,22 @@ body {
     .circle-item-text:hover span { transform:translateX(4px); }
 
 
+
+
+/* ===== 2 circles per row for small mobiles (380px–480px) ===== */
+@media (min-width: 360px) and (max-width: 480px) {
+    .circle-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 circles in one row */
+        justify-items: center;
+        gap: 30px;  /* adjust spacing */
+    }
+
+    .image-wrapper {
+        width: 150px;   /* slightly smaller circles */
+        height: 150px;
+    }
+}
 
 
 /* Hide second row & desktop navbar on mobile */
