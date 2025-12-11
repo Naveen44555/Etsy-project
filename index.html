@@ -25,10 +25,31 @@
     <a class="navbar-brand fs-1 fw-bold text-danger">𝐄𝐭𝐬𝐲</a>
 
     <!-- DESKTOP CATEGORIES -->
-    <div class="desktop-categories d-flex align-items-center ms-4">
-        <i class="bi bi-list fs-4 me-2"></i>
-        <span class="fw-semibold">Categories</span>
-    </div>
+   <!-- DESKTOP CATEGORIES BUTTON -->
+<div class="desktop-categories d-flex align-items-center ms-4">
+    <i class="bi bi-list fs-4 me-2"></i>
+    <span class="fw-semibold">Categories</span>
+</div>
+
+<!-- CATEGORY DROPDOWN (NOW OUTSIDE) -->
+<div class="category-dropdown" id="categoryMenu">
+  <ul>
+    <li onclick="window.location.href='accessories.html'">Accessories</li>
+    <li onclick="window.location.href='art.html'">Art & Collectibles</li>
+    <li onclick="window.location.href='baby.html'">Baby</li>
+    <li onclick="window.location.href='bags.html'">Bags & Purses</li>
+    <li onclick="window.location.href='bath.html'">Bath & Beauty</li>
+    <li onclick="window.location.href='books.html'">Books, Films & Music</li>
+    <li onclick="window.location.href='clothing.html'">Clothing</li>
+    <li onclick="window.location.href='craft.html'">Craft Supplies & Tools</li>
+    <li onclick="window.location.href='electronics.html'">Electronics</li>
+    <li onclick="window.location.href='gifts.html'">Gifts</li>
+    <li onclick="window.location.href='home.html'">Home & Living</li>
+    <li onclick="window.location.href='jewellery.html'">Jewellery</li>
+  </ul>
+</div>
+
+
 
     <!-- Desktop Search -->
     <div class="position-relative mx-auto desktop-search">
@@ -58,6 +79,9 @@
 
   </div>
 </nav>
+
+
+
 
 <!-- =====================
      SECOND ROW NAV (DESKTOP ONLY)
@@ -252,25 +276,103 @@
 
 <script src="https://cdn.jsdelivr.net/...bootstrap.min.js"></script>
 
- <script>
-    // After 1 second, slide once from image 1 to image 2 and stop
-    document.addEventListener('DOMContentLoaded', () => {
-      const wrappers = document.querySelectorAll('.image-wrapper');
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Defensive selector list (tries multiple possibilities)
+  const desktopCat =
+    document.querySelector('.desktop-categories') ||
+    document.getElementById('desktopCat') ||
+    document.querySelector('.nav-categories');
 
-      wrappers.forEach(wrapper => {
-        setTimeout(() => {
-          wrapper.classList.add('slide-once');
-        }, 3000); // 1 second delay
-      });
-    });
+  const mobileCat =
+    document.querySelector('.search-row .bi-list') ||
+    document.querySelector('.mobile-nav .bi-list') ||
+    document.querySelector('.mobile-hamburger') ||
+    document.querySelector('.bi-list.fs-3') ||
+    document.querySelector('.bi-list');
 
-    document.getElementsByClassName("bi bi-gift me-1")
-    
+  // Find the menu by id first, fallback to class
+  let menu = document.getElementById('categoryMenu') || document.querySelector('.category-dropdown');
 
-    // ---
+  // Helpful debugging output
+  console.info('JS init: desktopCat=', !!desktopCat, ' mobileCat=', !!mobileCat, ' menu=', !!menu);
+
+  if (!menu) {
+    console.error('Category menu element not found. Make sure you have id="categoryMenu" or class="category-dropdown".');
+    return;
+  }
+
+  // Ensure the menu is not inside a hidden parent on mobile: move to body if needed
+  function ensureMenuPlacement() {
+    try {
+      const shouldMove = window.innerWidth <= 768 && menu.parentElement !== document.body;
+      if (shouldMove) {
+        document.body.appendChild(menu);
+        menu.dataset._moved = '1';
+        // keep it visually hidden until toggled
+        menu.classList.remove('show');
+      } else if (window.innerWidth > 768 && menu.dataset._moved === '1') {
+        // try to move back close to navbar if possible
+        const navbarContainer = document.querySelector('.container-fluid.nav-container') || document.querySelector('.navbar .container-fluid') || document.querySelector('nav');
+        if (navbarContainer) navbarContainer.appendChild(menu);
+        delete menu.dataset._moved;
+      }
+    } catch (err) {
+      console.warn('ensureMenuPlacement error', err);
+    }
+  }
+  ensureMenuPlacement();
+  window.addEventListener('resize', () => { setTimeout(ensureMenuPlacement, 80); });
+
+  // Toggle helper
+  function toggleMenu(e) {
+    if (e) e.stopPropagation();
+    menu.classList.toggle('show');
+    menu.setAttribute('aria-hidden', menu.classList.contains('show') ? 'false' : 'true');
+  }
+
+  // Attach listeners (only if elements exist)
+  if (desktopCat) desktopCat.addEventListener('click', toggleMenu);
+  else console.warn('desktopCat not found — desktop toggle will not work');
+
+  if (mobileCat) mobileCat.addEventListener('click', toggleMenu);
+  else console.warn('mobileCat not found — mobile toggle will not work');
+
+  // Prevent clicks inside menu from closing it
+  menu.addEventListener('click', (ev) => ev.stopPropagation());
+
+  // Close on outside click
+  document.addEventListener('click', (ev) => {
+    if (!menu.contains(ev.target)
+        && !(desktopCat && desktopCat.contains(ev.target))
+        && !(mobileCat && mobileCat.contains(ev.target))) {
+      menu.classList.remove('show');
+      menu.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') {
+      menu.classList.remove('show');
+      menu.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  // Start circle slider animation (safe)
+  try {
+    const wrappers = document.querySelectorAll('.image-wrapper');
+    setTimeout(() => wrappers.forEach(w => w.classList.add('slide-once')), 2000);
+  } catch (e) {
+    console.warn('slider init error', e);
+  }
+
+  // Final log
+  console.info('Category dropdown script loaded. Try clicking the desktop "Categories" button or the hamburger icon on mobile.');
+});
+</script>
 
 
-  </script>
 
 
 
